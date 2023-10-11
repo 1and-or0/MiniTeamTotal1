@@ -8,7 +8,7 @@ public class BallManager : MonoBehaviour
     private Ball _ballCs;
     public bool isTurn = false;
     public float velocityThreshold = 0.1f;
-    public List<GameObject> ballObjs = null;
+    public List<GameObject> ballObjs = new List<GameObject>();
     
     // 싱글턴 인스턴스
     private static BallManager _instance;
@@ -54,6 +54,8 @@ public class BallManager : MonoBehaviour
         isTurn = true;
 
         _ballCs = FindAnyObjectByType<Ball>();
+         
+        Debug.Log("공의 개수: " + GameObject.FindGameObjectsWithTag("Ball").Length);
         for (int i = 0; i < GameObject.FindGameObjectsWithTag("Ball").Length; ++i)
         {
             ballObjs.Add(GameObject.FindGameObjectsWithTag("Ball")[i]);
