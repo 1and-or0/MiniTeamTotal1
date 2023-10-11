@@ -12,13 +12,10 @@ public class Pin : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag=="Plane")
+        if(collision.gameObject.tag == "Deadzone")
         {
             Destroy(gameObject);
-            Debug.Log(GameObject.FindGameObjectsWithTag("Pin").Length-1);
-
         }
-        
     }
 
     // Update is called once per frame

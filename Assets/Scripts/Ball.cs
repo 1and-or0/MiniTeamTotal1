@@ -54,7 +54,7 @@ public class Ball : MonoBehaviour
     void LaunchBall()
     {
         Vector3 direction = startPosition - endPosition;
-        Debug.Log(direction);
         rb.AddForce(direction * power * Time.deltaTime, ForceMode.Impulse);
     }
+    
 }
